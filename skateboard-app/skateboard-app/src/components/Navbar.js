@@ -12,15 +12,15 @@ const Navbar = () => {
                     <span>Asher Weitz Skateboard App</span>
                 </div>
                 <div className="navbar-links-external">
-                    <a href="https://github.com/AsherW13" target="_blank" rel="noopener noreferrer"> 
+                    <a href="https://github.com/AsherW13" target="_blank" rel="noopener noreferrer" aria-label="Github"> 
                         <FontAwesomeIcon icon={faGithub} />
                     </a>
-                    <a href="https://www.linkedin.com/in/asher-weitz/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/asher-weitz/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                         <FontAwesomeIcon icon={faLinkedin} />
                     </a>
                 </div>
             </div>
-            <nav className="navbar-pages">
+            <nav className="navbar-links">
                 <ul>
                     <li>
                         <Link to="/skateboarders">Skateboarders</Link>
