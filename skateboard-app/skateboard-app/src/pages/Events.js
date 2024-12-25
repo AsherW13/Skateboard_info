@@ -1,5 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import { supabase } from '../supabaseClient';
+import '../styles/Spinner.css';
+import '../styles/Table.css';
+
+
 
 const Events = () => {
   const [events, setEvents] = useState([]);
@@ -28,7 +32,11 @@ const Events = () => {
     fetchEvents();
   }, []);
 
-  if(loading) return <p>Loading...</p>;
+  if (loading) return (
+    <div className="spinner-container">
+      <div className="spinner"></div>
+    </div>
+  );
   if(error) return <p>Error: {error}</p>;
 
   return (

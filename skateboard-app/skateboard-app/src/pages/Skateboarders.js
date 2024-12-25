@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { supabase } from '../supabaseClient';
+import '../styles/Spinner.css';
+import '../styles/Table.css';
 
 const Skateboarders = () => {
     const [skateboarders, setSkateboarders] = useState([]);
@@ -28,16 +30,18 @@ const Skateboarders = () => {
       fetchSkateboarders();
     }, []);
   
-    if (loading) return <p>Loading...</p>;
+    if (loading) return (
+      <div className="spinner-container">
+        <div className="spinner"></div>
+      </div>
+    );
+
     if (error) return <p>Error: {error}</p>;
   
     return (
       <div>
         <h1>Skateboarders with Sponsors</h1>
         {error && <p>Error: {error}</p>}
-        {loading ? (
-          <p>Loading...</p>
-        ) : (
           <table>
             <thead>
               <tr>
@@ -72,7 +76,6 @@ const Skateboarders = () => {
               )}
             </tbody>
           </table>
-        )}
       </div>
     );
 };

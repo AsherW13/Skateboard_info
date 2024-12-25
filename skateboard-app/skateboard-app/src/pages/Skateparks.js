@@ -1,5 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import { supabase } from '../supabaseClient';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import '../styles/Spinner.css';
+import '../styles/Table.css';
+
+
 
 const Skateparks = () => {
   const [skateparks, setSkateparks] = useState([]);
@@ -28,7 +34,11 @@ const Skateparks = () => {
     fetchSkateparks();
   }, []);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return (
+    <div className="spinner-container">
+      <div className="spinner"></div>
+    </div>
+  );
   if (error) return <p>Error: {error}</p>;
 
   return (
@@ -54,7 +64,11 @@ const Skateparks = () => {
                   <td>{skatepark.skatepark_name}</td>
                   <td>{skatepark.skatepark_location}</td>
                   <td>{skatepark.features}</td>
-                  <td>{skatepark.rating}</td>
+                  <td>
+                    {Array.from({ length: skatepark.rating }).map((_, index) => (
+                      <FontAwesomeIcon key={index} icon={faStar} style={{ color: '#FFD700', marginRight: '4px' }} />
+                    ))}
+                  </td>
                 </tr>
               ))
             ) : (
