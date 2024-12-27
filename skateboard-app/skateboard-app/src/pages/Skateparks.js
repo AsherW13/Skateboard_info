@@ -5,8 +5,6 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Spinner.css';
 import '../styles/Table.css';
 
-
-
 const Skateparks = () => {
   const [skateparks, setSkateparks] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -16,7 +14,7 @@ const Skateparks = () => {
     const fetchSkateparks = async () => {
       console.log('Fetching skateparks with sponsors...');
       try {
-        const { data, error } = await supabase.from('skateparks').select();
+        const { data, error } = await supabase.rpc('get_skateparks_sorted_by_rating');
         console.log('Supabase response data: ', data);
         console.log('Supabase response error: ', error);
 

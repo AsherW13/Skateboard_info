@@ -7,6 +7,7 @@ import Skateboarders from './pages/Skateboarders';
 import StreetSpots from './pages/StreetSpots';
 import Skateparks from './pages/Skateparks';
 import Events from './pages/Events';
+import Brands from './pages/Brands';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/street-spots" element={<StreetSpots />} />
         <Route path="/skateparks" element={<Skateparks />} />
         <Route path="/events" element={<Events />} />
+        <Route path="/brands" element={<Brands />} />
         {/* <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} /> */}
       </Routes>
