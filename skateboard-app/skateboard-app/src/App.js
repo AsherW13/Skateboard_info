@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
@@ -10,13 +10,20 @@ import Events from './pages/Events';
 import Brands from './pages/Brands';
 
 function App() {
+
+  const [filteredSkateparks, setFilteredSkateparks] = useState([]);
+
+  const handleFilter = (filterData) => {
+    setFilteredSkateparks(filterData);
+  };
+
   return (
     <Router>
-      <Navbar />
+      <Navbar onFilter={handleFilter}/>
       <Routes>
         <Route path="/skateboarders" element={<Skateboarders />} />
         <Route path="/street-spots" element={<StreetSpots />} />
-        <Route path="/skateparks" element={<Skateparks />} />
+        <Route path="/skateparks" element={<Skateparks filteredSkateparks={filteredSkateparks} />} />
         <Route path="/events" element={<Events />} />
         <Route path="/brands" element={<Brands />} />
         {/* <Route path="/" element={<Home />} />

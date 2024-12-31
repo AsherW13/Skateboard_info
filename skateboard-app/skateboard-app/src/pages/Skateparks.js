@@ -5,7 +5,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Spinner.css';
 import '../styles/Table.css';
 
-const Skateparks = () => {
+const Skateparks = ({ filteredSkateparks }) => {
   const [skateparks, setSkateparks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -32,6 +32,9 @@ const Skateparks = () => {
     fetchSkateparks();
   }, []);
 
+  const skateparksToDisplay = filteredSkateparks.length > 0 ? filteredSkateparks : skateparks;
+
+
   if (loading) return (
     <div className="spinner-container">
       <div className="spinner"></div>
@@ -42,10 +45,6 @@ const Skateparks = () => {
   return (
     <div>
       <h1>Skateparks</h1>
-      {error && <p>Error: {error}</p>}
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
         <table>
           <thead>
             <tr>
@@ -56,8 +55,8 @@ const Skateparks = () => {
             </tr>
           </thead>
           <tbody>
-            {skateparks && skateparks.length > 0 ? (
-              skateparks.map((skatepark) => (
+            {skateparksToDisplay && skateparksToDisplay.length > 0 ? (
+              skateparksToDisplay.map((skatepark) => (
                 <tr key={skatepark.skatepark_name}>
                   <td>{skatepark.skatepark_name}</td>
                   <td>{skatepark.skatepark_location}</td>
@@ -74,7 +73,6 @@ const Skateparks = () => {
             )}
           </tbody>
         </table>
-      )}
     </div>
   );
 };

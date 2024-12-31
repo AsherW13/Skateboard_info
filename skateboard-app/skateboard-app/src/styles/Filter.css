@@ -1,0 +1,26 @@
+.filter-dialog {
+    position: fixed; /* Position it over the page */
+    top: 50%; /* Center it vertically */
+    left: 50%; /* Center it horizontally */
+    transform: translate(-50%, -50%); /* Adjust for exact center */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 999; /* Ensure it's on top */
+  }
+  
+  .filter-dialog input {
+    margin: 10px 0;
+    padding: 8px;
+    width: 200px;
+  }
+  
+  .filter-dialog button {
+    padding: 8px 12px;
+    margin-top: 10px;
+  }
+  
+  .filter-dialog button:hover {
+    cursor: pointer;
+  }

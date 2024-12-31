@@ -36,16 +36,20 @@ header .navbar-links-external a {
 nav.navbar-links {
   width: 100%;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
   background-color: #fff;
   padding: 20px 0;
   position: sticky;
   top: 0;
-  z-index: 999; /* Ensure it stays on top of content while scrolling */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 999; 
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav.navbar-links ul {
+  justify-content: center;
+  gap: 40px; 
+  flex: 1; 
   list-style: none;
   display: flex;
   gap: 40px;
@@ -88,6 +92,18 @@ nav.navbar-links-external a:hover {
 
 nav.navbar-links-external a svg {
   font-size: 2rem;
+}
+
+.filter-icon {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #333;
+  padding: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.filter-icon:hover {
+  color: #306426; 
 }
 
 @media (max-width: 768px) {
