@@ -8,6 +8,7 @@
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 999; /* Ensure it's on top */
+    width: 300px;
   }
   
   .filter-dialog input {
@@ -19,8 +20,45 @@
   .filter-dialog button {
     padding: 8px 12px;
     margin-top: 10px;
+
+  }
+
+  #apply-button {
+    background-color: blue;
+    color: white;
   }
   
   .filter-dialog button:hover {
     cursor: pointer;
+    
+  }
+
+  #cancel-button:hover {
+    background-color: blue;
+    color: white;
+  }
+
+  .filter-dialog label {
+    display: block; 
+    margin-bottom: 8px; 
+  }
+  
+
+  .filter-dialog-header {
+    cursor: grab;
+  }
+  
+  .filter-dialog-content {
+    padding: 10px;
+  }
+  .filter-icon {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #333;
+    padding: 0 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .filter-icon:hover {
+    color: #306426; 
   }

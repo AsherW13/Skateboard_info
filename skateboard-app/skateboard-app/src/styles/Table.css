@@ -23,6 +23,12 @@ thead {
     text-align: left;
 }
 
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 thead th {
     padding: 10px;
     font-weight: bold;

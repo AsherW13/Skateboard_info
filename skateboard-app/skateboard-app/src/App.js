@@ -11,19 +11,13 @@ import Brands from './pages/Brands';
 
 function App() {
 
-  const [filteredSkateparks, setFilteredSkateparks] = useState([]);
-
-  const handleFilter = (filterData) => {
-    setFilteredSkateparks(filterData);
-  };
-
   return (
     <Router>
-      <Navbar onFilter={handleFilter}/>
+      <Navbar/>
       <Routes>
         <Route path="/skateboarders" element={<Skateboarders />} />
         <Route path="/street-spots" element={<StreetSpots />} />
-        <Route path="/skateparks" element={<Skateparks filteredSkateparks={filteredSkateparks} />} />
+        <Route path="/skateparks" element={<Skateparks />} />
         <Route path="/events" element={<Events />} />
         <Route path="/brands" element={<Brands />} />
         {/* <Route path="/" element={<Home />} />

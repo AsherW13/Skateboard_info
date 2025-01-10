@@ -2,16 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faFilter } from '@fortawesome/free-solid-svg-icons';
-import FilterDialog from '../components/FilterDialog.jsx';
 import '../styles/Navbar.css';
 
-const Navbar = ({onFilter}) => {   
-  const [showFilterDialog, setShowFilterDialog] = useState(false);
-   
+const Navbar = () => {   
   return (
     <>
-      {/* Header Section for logo and external links */}
       <header>
         <div className="navbar-top">
           <div className="navbar-name">
@@ -38,7 +33,6 @@ const Navbar = ({onFilter}) => {
         </div>
       </header>
 
-      {/* Navbar Section for navigation links */}
       <nav className="navbar-links">
         <ul>
           <li>
@@ -57,19 +51,7 @@ const Navbar = ({onFilter}) => {
             <Link to="/brands">Brands</Link>
           </li>
         </ul>
-
-        <div className="filter-icon" onClick={() => {console.log('Filter icon clicked'); setShowFilterDialog(true)}}>
-          <FontAwesomeIcon icon={faFilter} />
-        </div>
-
       </nav>
-
-      {showFilterDialog && (
-        <FilterDialog
-          onApplyFilter={onFilter}
-          onClose={() => setShowFilterDialog(false)}
-        />
-      )}
     </>
   );
 };

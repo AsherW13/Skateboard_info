@@ -94,18 +94,6 @@ nav.navbar-links-external a svg {
   font-size: 2rem;
 }
 
-.filter-icon {
-  cursor: pointer;
-  font-size: 1.5rem;
-  color: #333;
-  padding: 0 10px;
-  transition: color 0.3s ease;
-}
-
-.filter-icon:hover {
-  color: #306426; 
-}
-
 @media (max-width: 768px) {
   header .navbar-top {
     flex-direction: column;
